@@ -2,8 +2,9 @@
 
 ## T2TRG Summary Meeting
 
-Notes: http://etherpad.tools.ietf.org:9000/p/notes-irtf-97-t2trg
+Slides: https://github.com/t2trg/2016-ietf97/tree/master/slides
 
+Notes: http://etherpad.tools.ietf.org:9000/p/notes-irtf-97-t2trg
 
 |  Time | Who                      | Subject                                            | Docs                  |
 |-------|--------------------------|----------------------------------------------------|-----------------------|
