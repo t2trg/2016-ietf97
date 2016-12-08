@@ -1,0 +1,91 @@
+T2TRG Summary meeting at IETF 97
+Seoul, South Korea
+
+Wednesday, November 16, 2016, 15:20-16:20
+Chairs: Carsten Bormann & Ari Keränen
+
+Note takers: Francesca Palombini, Christian Groves, Ari Keränen
+Git repo for this meeting at: https://github.com/t2trg/2016-ietf97
+
+15:20  RG Status Update (Chairs)                
+slides: https://github.com/t2trg/2016-ietf97/blob/master/slides/10-T2TRG-2016-ietf97-summary-chair-material.pdf
+
+Carsten gave overview of T2TRG scope & goals. RG meetings: with W3C in Nice and Lisbon, San Jose IAB IoTSI WS, Buenos Aires and Berlin, RIOT summit in Berlin, Implementors' meeting in Ludwigsburg, joint meeting with ICNRG in Seoul. 2017 calendar open TBD. Joint meeting with ICNRG and T2TRG on Sunday before the IETF 97.
+
+15:30  W3C WoT Update (Matthias Kovatsch)
+slides: https://www.ietf.org/proceedings/97/slides/slides-97-t2trg-wot-update-00.pdf
+
+* W3C WoT mission: not to create another standard. Building blocks of semantic metadata for interoperability. How to develop portable IoT applications. WoT Building blocks: WoT scripting API, thing descriptions (TD), protocol mappings, security and privacy. TD is the central building block.
+* WoT interest group in W3C since April 2015. Rechartered in August 2016. 210 participants. 7 face-2-face meetings thus far (4 in 2016). 
+* Proposed new WoT Working Group: can do normative standards work. The interest group is more like the T2TRG. There is a proposed charter. See slide for links. Review in September 2016. 49 support as is. 6 comments on RDF dependency/semantic complexity, scope, and security. Working on priority of deliverables. TD has the priority as it has the greatest interest to members. Security consideration: more emphasis that we have to run checks and running code. Comments from browser vendors.
+* see slide 8 for links to Resources
+
+[Dinh] Can I participate in W3C as an individual member?
+[Matthias] University isn't member of W3C but WoT mailing list and Github are public.
+
+15:40  Security considerations (Mohit Sethi)
+slides: https://www.ietf.org/proceedings/97/slides/slides-97-t2trg-security-considerations-for-the-iot-01.pdf
+
+* Draft originally submitted to CoRE WG several years ago. Decided to address this in the T2TRG. Draft to act as a repository of security issues for other drafts dealing with IoT.
+* Draft discusses the thing life cycle from manufacturing through to de-comissioning and possible re-purposing.
+* It also contains a threat analysis: cloning of things, substitution, eavesdropping/MiTM, privacy, denial-of-service, firmware replacement, routing attacks.
+* It lists challenges in securing against these threats: heterogeneity of devices, protocol translation vs. e2e security (translation but also aggregators), software update, verifying device behavior, end of life, penetration testing, quantum resistance. Got comment from Stepehen Farrell which led to new challenges being documented.
+* Several sections discussing profiles/ architecture / state of the art. Different environments: home/ managed home/ industrial, tradeoffs. Depending on the scenario you may have different requirements.
+* What has been changed: there has been a section reordering, added challenges, bootstrapping has been removed and placed into a separate draft.
+* Next Steps: Think it will take a few more iterations to get the draft finalized. Draft too long, structure should be made more consistent. Suggest a uniform structure according to security pillars: Security Architecture, Security model of a thing, security bootstrapping, network security, application security.
+Threats: possibly restructure and classify
+Security profiles: further detail.
+State of the art: Is outdated, classify according to pillars
+
+[Mike St Johns] Frustrated. Document concentrates on threats to things rather than threats from things. Need to think of IoT of things and that we don't have the same model of control over them. Cyberphysical threats and DDOS need to be considered.
+
+[Mohit] Point taken, but we don't think we can go into solutions in the draft. 
+
+[Mike] Can we afford profiles with little security?
+
+[Dan York] Agree with Mike. Practical question: how do you want the feedback? Github? 
+
+[Mohit] Github or email
+
+[Ari] Preferable to email the RG list. Github good to keep track of the issues.
+
+[Jason Livingood] There's a document coming out of the BTAG going through many relevant issues.
+
+[Mohit] Many forums writing guidelines in this space. We don't think we can take all of them into account.
+
+[Lee Howard] Can prevent threats from by dealing with threats to.
+
+[Niels Ten Over] It would be useful to link to the other guidelines.
+
+[Mohit] Good point.
+
+
+15:55  RESTful Design and Hypermedia (Ari Keränen)
+slides: https://www.ietf.org/proceedings/97/slides/slides-97-t2trg-restful-iot-work-00.pdf
+
+* Many documents included in this presentation: guidance, hypermedia language for IoT, Hypermedia apps. (see slide 2 for full list)
+* RESTful Design document: collection of basic information, been around for a long time. Lots of terminology. Idea to be able to give a draft to a new person and for them to be able to understand RESTful design for IoT. Focused on the constrained devices and networks. A lot of issues in the issue tracker that we are planning to adress.
+* CoRE Application Description: how can you describe APIs of constrained RESTful applications
+* Hypermedia Language for IoT: "HTML for IoT" more focused on control. Related work going on in W3C WoT.
+* CoRAL Language: hypermedia representation format for links and forms based on CBOR. 2 different drafts related to this.
+* HSML: combined CoRE link format + SenML, using JSON and CBOR.
+* Comparing CoRAL to HSML: Why have different approaches? Because its a research group. Need to understand the similarities and differences.
+* Ongoing work: experimentation and evaluation through prototyping. Idea is to converge into a single solution but right now we are exploring both.
+* Hypermedia Applications: Core Lighting from Klaus Hartke (needs update) and Thing-to-Thing Data Hub. T2T Data Hub tries to have more dynamic resources following REST principles.
+
+Please read the documents and come back to us if you are interested in any of those.
+
+No mic comments.
+
+16:10  CoMI/YANG interaction model for IoT (Alexander Pelov)
+slides: https://www.ietf.org/proceedings/97/slides/slides-97-t2trg-yang-interaction-model-for-iot-00.pdf
+
+* Question how many know YANG? Most people put up their hand. 
+* Current scope of YANG large amount of modules for (routers) less for IoT (small stuff). CoMI in the middle. In the future there will be more YANG modules for IoT devices.
+* Allows a richer vocabulary between devices.
+* Talked about interaction model description. How do you determine methods, URI data syntax and data values? The semantics.
+* Example with REST. Showing that content formats may be used to describe the data. How to handle a large number of possible content types? Use HATEOAS or CoMI/YANG.
+* Alternative to REST: CoMI / YANG. In this case much richer set of interactions. Medium term solution that gives a lot of power at a level below the fully RESTful communication (long term).
+
+
+[Carsten] People can always propose topics to be discussed in summary meetings in the research group.
